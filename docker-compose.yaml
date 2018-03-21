@@ -1,0 +1,14 @@
+#based on https://portainer.readthedocs.io/en/latest/deployment.html
+
+version: '2'
+
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer:linux-arm
+    restart: unless-stopped
+    ports:
+      - 12000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /data/portainer:/data
